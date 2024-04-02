@@ -1,0 +1,26 @@
+import networkx as net
+from lxml import etree as e
+
+xml = """
+<root>
+<node id="1">cats</node>
+<node id="2">dogs</node>
+<node id="3">cats and dogs</node>
+<link from="1" to="3" />
+<link from="2" to="3" />
+<link from="3" to="1" />
+</root>
+"""
+
+g = net.DiGraph()
+for l in e.fromstring(xml).findall(".//link"):
+    g.add_edge(l.attrib["from"], l.attrib["to"])
+
+pr = net.pagerank(g, weight="weight", alpha=0.85).items()
+
+for i in pr:
+    if "cats" in i:
+        pr[i] += 0.15
+
+for node, score in pr:
+    print(f"Node {node}: PageRank = {score}")
