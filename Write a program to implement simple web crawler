@@ -1,0 +1,6 @@
+import requests
+from bs4 import BeautifulSoup
+
+s = BeautifulSoup(requests.get("https://www.amazon.in").text, features="lxml")
+for i in s.find_all("a"):
+    print(i.get("href"))
