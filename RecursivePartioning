@@ -1,0 +1,13 @@
+library(party)
+dt=ctree(mpg~cyl+am,data=mtcars)
+dt
+index=sample(1:nrow(mtcars),0.75*nrow(mtcars))
+train=mtcars[index,]
+test=readingSkills[-index]
+train
+test=readingSkills[-index]
+train
+train=mtcars[-index]
+train
+dt=ctree(mpg~hp+wt,data=mtcars)
+plot(dt)
