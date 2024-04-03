@@ -1,0 +1,12 @@
+data("iris")
+head(iris)
+names(iris)
+newdata = subset(iris,select=c(-Species))
+newdata
+resl = kmeans(newdata,3)
+resl
+res2 = sapply(1:15,function(k){kmeans(newdata,k)$tot.withinss})
+res2
+plot(1:15,res2,type="b",pch="19",frame=FALSE,xlab="no of clusters", ylab="Total clusters")
+library(cluster)
+clusplot(newdata,resl$cluster,color=TRUE, shade = TRUE, labels = 2, lines = 0)
