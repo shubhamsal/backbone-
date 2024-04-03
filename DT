@@ -1,3 +1,4 @@
+install.packages("partykit")
 data('mtcars')
 head(mtcars)
 dt = ctree(mpg~cyl+am,data=mtcars)
