@@ -1,0 +1,17 @@
+ACK -sA (TCP ACK scan)
+  nmap -sA -T4 scanme.nmap.org
+
+SYN (Stealth) Scan (-sS)
+
+nmap -p22,113,139 scanme.nmap.org
+
+
+FIN Scan (-sF)
+ nmap -sF -T4 para
+
+
+NULL Scan (-sN)
+nmap –sN –p 22 scanme.nmap.org
+
+XMAS Scan (-sX)
+nmap -sX -T4 scanme.nmap.org
