@@ -1,0 +1,7 @@
+tracert www.google.com
+
+ipconfig
+
+netstat
+
+ping <ip address>
